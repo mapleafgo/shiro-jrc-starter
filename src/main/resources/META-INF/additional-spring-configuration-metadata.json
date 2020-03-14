@@ -1,0 +1,96 @@
+{
+  "groups": [
+    {
+      "sourceType": "cn.civilizationdata.shiro.properties.ShiroRedisProperties",
+      "name": "shiro-redis-jwt",
+      "type": "cn.civilizationdata.shiro.properties.ShiroRedisProperties"
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.properties.ShiroRedisProperties",
+      "name": "shiro-redis-jwt.jwt",
+      "sourceMethod": "getJwt()",
+      "type": "cn.civilizationdata.shiro.jwt.JwtProperties"
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.properties.ShiroRedisProperties",
+      "name": "shiro-redis-jwt.casbin",
+      "sourceMethod": "getCasbin()",
+      "type": "cn.civilizationdata.shiro.casbin.properties.CasbinProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "cn.civilizationdata.shiro.properties.ShiroRedisProperties",
+      "name": "shiro-redis-jwt.filter",
+      "type": "java.util.Set",
+      "description": "shiro 拦截地址配置."
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.properties.ShiroRedisProperties",
+      "name": "shiro-redis-jwt.cache-prefix",
+      "type": "java.lang.String",
+      "description": "shiro 缓存前缀.",
+      "defaultValue": "shiro:cache"
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.properties.ShiroRedisProperties",
+      "name": "shiro-redis-jwt.session-prefix",
+      "type": "java.lang.String",
+      "description": "shiro session前缀.",
+      "defaultValue": "shiro:session"
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.properties.ShiroRedisProperties",
+      "name": "shiro-redis-jwt.time-out",
+      "type": "java.lang.Integer",
+      "description": "shiro 缓存过期时长.",
+      "defaultValue": "30 * 60 * 1000"
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.jwt.JwtProperties",
+      "name": "shiro-redis-jwt.jwt.secret",
+      "type": "java.lang.String",
+      "description": "jwtToken 校验码."
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.jwt.JwtProperties",
+      "name": "shiro-redis-jwt.jwt.issuer",
+      "type": "java.lang.String",
+      "description": "jwtToken 发布者."
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.jwt.JwtProperties",
+      "name": "shiro-redis-jwt.jwt.expires",
+      "type": "java.lang.Integer",
+      "description": "jwtToken 过期时长(分钟).",
+      "defaultValue": "30"
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.casbin.properties.CasbinProperties",
+      "name": "shiro-redis-jwt.casbin.etcd",
+      "type": "java.lang.String",
+      "description": "Etcd Server."
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.casbin.properties.CasbinProperties",
+      "name": "shiro-redis-jwt.casbin.model",
+      "type": "java.lang.String",
+      "description": "Casbin 模型.",
+      "defaultValue": "classpath:casbin/model.conf"
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.casbin.properties.CasbinProperties",
+      "name": "shiro-redis-jwt.casbin.etcd-key",
+      "type": "java.lang.String",
+      "description": "EtcdWatcher Key.",
+      "defaultValue": "/casbin/watcher_path"
+    },
+    {
+      "sourceType": "cn.civilizationdata.shiro.casbin.properties.CasbinProperties",
+      "name": "shiro-redis-jwt.casbin.dbtable",
+      "type": "java.lang.String",
+      "description": "规则存储表名.",
+      "defaultValue": "casbin_rule_path"
+    }
+  ]
+}
