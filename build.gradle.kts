@@ -61,8 +61,8 @@ publishing {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
             pom {
-                name.set("jcasbin extra")
-                description.set("JCasbin 的扩充，包含 HutoolDB Adapter，Etcd Watcher")
+                name.set("shiro-jrc-starter")
+                description.set("Shiro 整合casbin、redis、jwt后的starter包")
             }
         }
     }
